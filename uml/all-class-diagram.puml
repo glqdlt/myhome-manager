@@ -1,6 +1,25 @@
 @startuml
 
-package user{
+
+package persistence.entity.server{
+
+    class Server{
+    seq : Integer
+    name : String
+    ip : String
+    }
+
+}
+
+package persistence.entity.author{
+    class Author{
+        seq : Integer
+        name : String
+        regDate : Date
+    }
+}
+
+package persistence.entity.user{
 class User {
     seq : Integer
     id : String
@@ -13,17 +32,17 @@ enum UserType{
     GUEST,USER,ADMIN
 }
 }
-package book {
+package persistence.entity.book {
 abstract class Book{
     seq : Integer
     title : String
-    author : String
+    author : Author
     regDate : Date
     expireDate : Date
     register : User
-    descriptionUrl : Url
+    descriptionUrl : String
     type : BookType
-    tag : Tag[]
+    tags : List<Tag>
 }
 
 class Tag {
@@ -37,13 +56,13 @@ class ScanBook{
     fileName : String
     fileHash : String
     path : String
-    serverId : Integer
+    server : Server
     size : Integer
 }
 
 class RidiBook{
-    url : Url
-    ridiOwnerId : String
+    url : String
+    ridiUserId : String
 }
 
 enum BookType {

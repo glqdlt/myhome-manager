@@ -1,0 +1,56 @@
+@startuml
+
+package user{
+class User {
+    seq : Integer
+    id : String
+    password : String
+    name : String
+    type : UserType
+}
+
+enum UserType{
+    GUEST,USER,ADMIN
+}
+}
+package book {
+abstract class Book{
+    seq : Integer
+    title : String
+    author : String
+    regDate : Date
+    expireDate : Date
+    register : User
+    descriptionUrl : Url
+    type : BookType
+    tag : Tag[]
+}
+
+class Tag {
+    seq : Integer
+    value : String
+}
+Book <|-- ScanBook
+Book <|-- RidiBook
+
+class ScanBook{
+    fileName : String
+    fileHash : String
+    path : String
+    serverId : Integer
+    size : Integer
+}
+
+class RidiBook{
+    url : Url
+    ridiOwnerId : String
+}
+
+enum BookType {
+    DEV
+    HUMANISM
+    DESIGN
+}
+}
+
+@enduml

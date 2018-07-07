@@ -17,6 +17,8 @@
 *.ipr
 .mvn
 
+**/application-product.properties
+
 mvnw
 mvnw.cmd
 

@@ -19,16 +19,16 @@ package persistence.entity.author{
     }
 }
 
-package persistence.entity.user{
-class User {
+package persistence.entity.member{
+class Member {
     seq : Integer
     id : String
     password : String
     name : String
-    type : UserType
+    type : MemberType
 }
 
-enum UserType{
+enum MemberType{
     GUEST,USER,ADMIN
 }
 }
@@ -39,7 +39,7 @@ abstract class Book{
     author : Author
     regDate : Date
     expireDate : Date
-    register : User
+    register : Member
     descriptionUrl : String
     type : BookType
     tags : List<Tag>

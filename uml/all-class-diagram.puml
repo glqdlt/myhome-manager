@@ -1,7 +1,7 @@
 @startuml
 
 
-package persistence.entity.server{
+package persistence.server.entity{
 
     class Server{
     seq : Integer
@@ -11,7 +11,7 @@ package persistence.entity.server{
 
 }
 
-package persistence.entity.author{
+package persistence.author.entity{
     class Author{
         seq : Integer
         name : String
@@ -19,7 +19,7 @@ package persistence.entity.author{
     }
 }
 
-package persistence.entity.member{
+package persistence.member.entity{
 class Member {
     seq : Integer
     id : String
@@ -32,7 +32,7 @@ enum MemberType{
    USER,ADMIN
 }
 }
-package persistence.entity.book {
+package persistence.book.entity {
 abstract class Book{
     seq : Integer
     title : String

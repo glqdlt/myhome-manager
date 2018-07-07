@@ -29,7 +29,7 @@ class Member {
 }
 
 enum MemberType{
-    GUEST,USER,ADMIN
+   USER,ADMIN
 }
 }
 package persistence.entity.book {
@@ -41,7 +41,6 @@ abstract class Book{
     expireDate : Date
     register : Member
     descriptionUrl : String
-    type : BookType
     tags : List<Tag>
 }
 
@@ -63,12 +62,6 @@ class ScanBook{
 class RidiBook{
     url : String
     ridiUserId : String
-}
-
-enum BookType {
-    DEV
-    HUMANISM
-    DESIGN
 }
 }
 

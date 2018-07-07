@@ -1,10 +1,12 @@
-package com.glqdlt.myhome.myhomemanager.persistence.entity.author;
+package com.glqdlt.myhome.myhomemanager.persistence.author.entity;
 
+import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.util.Date;
 
+@Data
 @Entity(name = "tbl_author")
 public class Author {
     @Id
@@ -13,6 +15,7 @@ public class Author {
     @Column(nullable = false)
     private String name;
 
+    @Column(nullable = false)
     @CreationTimestamp
     private Date regDate;
 }

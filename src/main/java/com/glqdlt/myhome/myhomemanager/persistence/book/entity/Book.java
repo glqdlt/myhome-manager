@@ -1,7 +1,7 @@
-package com.glqdlt.myhome.myhomemanager.persistence.entity.book;
+package com.glqdlt.myhome.myhomemanager.persistence.book.entity;
 
-import com.glqdlt.myhome.myhomemanager.persistence.entity.author.Author;
-import com.glqdlt.myhome.myhomemanager.persistence.entity.member.Member;
+import com.glqdlt.myhome.myhomemanager.persistence.author.entity.Author;
+import com.glqdlt.myhome.myhomemanager.persistence.member.entity.Member;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -18,25 +18,26 @@ public abstract class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer seq;
-    @Column(nullable = false)
+
+    @Column(nullable = false,unique = true)
     private String title;
 
     @OneToOne(targetEntity = Author.class)
-    @JoinColumn(name = "seq")
+    @JoinColumn(nullable = false)
     private Author author;
 
+    @Column(nullable = false)
     @CreationTimestamp
     private Date regDate;
     private Date expireDate;
+
+    @OneToOne
+    @JoinColumn(nullable = false)
     private Member register;
+
     private String descriptionUrl;
 
-    @Enumerated
-    private BookType type;
-
-    @JoinColumn(name = "seq")
     @OneToMany(targetEntity = Tag.class)
-    @Column(nullable = false)
     private List<Tag> tags;
 
 }

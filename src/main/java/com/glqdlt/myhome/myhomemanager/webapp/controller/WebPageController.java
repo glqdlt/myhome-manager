@@ -16,13 +16,19 @@ public class WebPageController {
 
     @GetMapping("/dashboard/book")
     public String bookDashboard(){
-        return "book-dashboard";
+        return "/book/book-dashboard";
     }
 
 
     @GetMapping("/dashboard/book/editor")
     public String bookEditor(){
-        return "book-editor";
+        return "/book/book-editor";
+    }
+
+
+    @GetMapping("/regist")
+    public String regist(){
+        return "register";
     }
 
     @GetMapping("/login")

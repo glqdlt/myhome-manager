@@ -3,27 +3,30 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Title</title>
-    <link rel="stylesheet" href="/webjars/bootstrap/4.1.0/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="/webjars/my-datatable/1.0.1/datatables.min.css"/>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/assets/my-datatable/datatables.min.css"/>
 </head>
-<script src="/webjars/my-datatable/1.0.1/datatables.min.js"></script>
-<script src="/webjars/momentjs/2.15.1/min/moment.min.js"></script>
+<script src="/assets/my-datatable/datatables.min.js"></script>
+<script src="/assets/momentjs/min/moment.min.js"></script>
 <body>
-
-<div id="draw-zone">
-    <table id="book-data-table" class="table table-striped table-bordered" style="width:100%">
-        <thead>
-        <tr>
-            <th>SEQ</th>
-            <th>TITLE</th>
-            <th>AUTHOR</th>
-            <th>등록일</th>
-            <th>마감일</th>
-        </tr>
-        </thead>
-    </table>
+<div class="content">
+    <div class="row">
+        <div id="draw-zone" class="col-sm-12">
+            <table id="book-data-table" class="table table-striped table-bordered" style="width:100%">
+                <thead>
+                <tr>
+                    <th>SEQ</th>
+                    <th>TITLE</th>
+                    <th>AUTHOR</th>
+                    <th>등록일</th>
+                    <th>마감일</th>
+                    <th>등록자</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
 </div>
-
 
 <script type="text/javascript">
     'use strict'
@@ -59,7 +62,11 @@
                 'excel'
             ],
             columns: [
-                {data: 'seq'},
+                {
+                    data: 'seq', render: function (data) {
+                        return '<a href="/dashboard/book/detail/' + data + '">' + data + '</a>';
+                    }
+                },
                 {data: 'title'},
                 {
                     data: 'author', render: function (data) {
@@ -74,6 +81,11 @@
                 {
                     data: 'expireDate', type: 'date', render: function (data) {
                         return data === null ? '미 등록' : data;
+                    }
+                },
+                {
+                    data : 'register', render : function(data){
+                        return data.name;
                     }
                 }
             ],

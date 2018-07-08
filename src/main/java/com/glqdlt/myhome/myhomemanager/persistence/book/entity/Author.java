@@ -1,4 +1,4 @@
-package com.glqdlt.myhome.myhomemanager.persistence.author.entity;
+package com.glqdlt.myhome.myhomemanager.persistence.book.entity;
 
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;

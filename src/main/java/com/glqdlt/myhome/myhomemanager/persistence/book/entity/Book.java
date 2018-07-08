@@ -1,6 +1,5 @@
 package com.glqdlt.myhome.myhomemanager.persistence.book.entity;
 
-import com.glqdlt.myhome.myhomemanager.persistence.author.entity.Author;
 import com.glqdlt.myhome.myhomemanager.persistence.member.entity.Member;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
@@ -39,5 +38,7 @@ public abstract class Book {
 
     @OneToMany(targetEntity = Tag.class)
     private List<Tag> tags;
+
+    private String thumbnailUrl;
 
 }

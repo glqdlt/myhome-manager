@@ -1,8 +1,9 @@
-package com.glqdlt.myhome.myhomemanager.webapp.controller.api;
+package com.glqdlt.myhome.myhomemanager.webapp.controller.api.book;
 
 
 import com.glqdlt.myhome.myhomemanager.persistence.book.entity.Book;
 import com.glqdlt.myhome.myhomemanager.service.book.BookService;
+import com.glqdlt.myhome.myhomemanager.webapp.controller.api.DataTableModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,8 +20,8 @@ public class BookRestController {
     BookService bookService;
 
     @GetMapping()
-    public ResponseEntity<List<Book>> findAllBooks() {
-        return new ResponseEntity<>(bookService.findAll(), HttpStatus.OK);
+    public ResponseEntity<DataTableModel> findAllBooks() {
+        return new ResponseEntity<>(new DataTableModel<>(bookService.findAll()), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")

@@ -1,7 +1,7 @@
 INSERT INTO `tbl_author` (`seq`, `name`, `reg_date`) VALUES
 	(1, 'SomeWriter', '2018-07-08 00:58:44');
-INSERT INTO `tbl_member` (`seq`, `id`, `name`, `password`, `reg_date`, `type`) VALUES
-	(1, 'testId', 'testUserName', 'testPassword', '2018-07-08 00:58:44', 'ADMIN');
+INSERT INTO `tbl_member` (`seq`, `id`, `name`, `password`,`type`) VALUES
+	(1, 'admin', 'admin', 'admin1234', 'ADMIN');
 INSERT INTO `tbl_tag` (`seq`, `value`) VALUES
 	(1, 'Java'),
 	(2, 'Programming');

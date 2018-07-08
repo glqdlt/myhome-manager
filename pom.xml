@@ -26,6 +26,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>momentjs</artifactId>
+            <version>2.15.1</version>
+        </dependency>
+        <dependency>
             <groupId>com.glqdlt.webjar</groupId>
             <artifactId>my-datatable</artifactId>
             <version>1.0.1</version>

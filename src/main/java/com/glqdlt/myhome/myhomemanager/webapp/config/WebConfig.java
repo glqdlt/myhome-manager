@@ -13,5 +13,6 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         registry.addResourceHandler("/assets/bootstrap/**").addResourceLocations("/webjars/bootstrap/4.1.0/");
         registry.addResourceHandler("/assets/momentjs/**").addResourceLocations("/webjars/momentjs/2.15.1/");
         registry.addResourceHandler("/assets/sbadmin/**").addResourceLocations("classpath:/static/sb-admin/");
+        registry.addResourceHandler("/assets/tagit/**").addResourceLocations("classpath:/static/tag-it/");
     }
 }

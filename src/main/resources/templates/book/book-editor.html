@@ -273,7 +273,7 @@
                             <div class="mb-3">
                                 <label for="book-description-url">Description URL <span
                                         class="text-muted">(Optional)</span></label>
-                                <input type="url" class="form-control" id="book-description-url"
+                                <input type="text" class="form-control" id="book-description-url"
                                        placeholder="http://...">
                                 <div class="invalid-feedback">
                                     Please enter a valid email address for shipping updates.
@@ -356,7 +356,7 @@
                 <div class="row">
                     <div class="col-md-8 order-md-1">
                         <hr class="mb-4">
-                        <button class="btn btn-primary btn-lg btn-block" type="submit">등록</button>
+                        <button id="form-submit-button" class="btn btn-primary btn-lg btn-block" type="button" onclick="saveBook()">등록</button>
                     </div>
                 </div>
             </div>
@@ -409,6 +409,40 @@
                 availableTags: tags
             });
         });
+
+        function saveBook(){
+            'use strict'
+             let form = new FormData();
+            let uploadFile = $('#scan-file-upload')[0].files[0];
+            let title = $('#book-title').val();
+            let author = $('#book-author').val();
+            let descriptionUrl = $('book-description-url').val();
+            let expireDate = $('expire-date').val();
+            form.append("uploadFile",uploadFile);
+            form.append("title",title);
+            form.append("author",author);
+            form.append("descriptionUrl",descriptionUrl);
+            form.append("expireDate",expireDate);
+            form.append("bookType","SCAN");
+            form.append("tags",null);
+
+            $('#form-submit-button').toggleClass('disabled');
+
+            $.ajax({
+                url : '/api/books',
+                type : 'post',
+                contentType: false,
+                processData: false,
+                cache : false,
+                data : form,
+                success : function(res){
+                    $('#form-submit-button').toggleClass('disabled');
+                },
+                error : function(err){
+                    console.error(err);
+                }
+            })
+        }
     </script>
 </div>
 </body>

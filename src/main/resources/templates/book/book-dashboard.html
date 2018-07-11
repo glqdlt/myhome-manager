@@ -257,11 +257,10 @@
                     <table class="table table-bordered" id="book-data-table" width="100%" cellspacing="0">
                         <thead>
                         <tr>
-                            <th>SEQ</th>
-                            <th>TITLE</th>
-                            <th>AUTHOR</th>
+                            <th>NO</th>
+                            <th>제목</th>
+                            <th>작가</th>
                             <th>등록일</th>
-                            <th>마감일</th>
                             <th>등록자</th>
                             <th>Tag</th>
                         </tr>
@@ -357,12 +356,7 @@
                 },
                 {
                     data: 'regDate', type: 'date', render: function (data) {
-                        return moment(data).format('YYYY-MM-DD');
-                    }
-                },
-                {
-                    data: 'expireDate', type: 'date', render: function (data) {
-                        return data === null ? '미 등록' : data;
+                        return moment(data).format('YYYY-MM-DD HH:mm');
                     }
                 },
                 {

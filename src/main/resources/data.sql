@@ -1,12 +1,14 @@
 INSERT INTO `tbl_author` (`seq`, `name`) VALUES
-	(1, 'SomeWriter');
+	(1, '로버트 마틴');
 INSERT INTO `tbl_member` (`seq`, `id`, `name`, `password`,`type`) VALUES
 	(1, 'admin', 'admin', 'admin1234', 'ADMIN');
 INSERT INTO `tbl_tag` (`seq`, `value`) VALUES
-	(1, 'Java'),
-	(2, 'Programming');
+	(1, '자바'),
+	(2, '프로그래밍'),
+	(3, '철학'),
+	(4, '마인드');
 INSERT INTO `tbl_book` (`archive_type`, `seq`, `description_url`, `expire_date`,  `title`, `author_seq`, `register_seq`) VALUES
-	('S', 1, NULL, NULL, 'Happy Java', 1, 1);
+	('S', 1, NULL, NULL, '클린 코더', 1, 1);
 INSERT INTO `tbl_book_tags` (`tbl_book_seq`, `tags_seq`) VALUES
 	(1, 1),
 	(1, 2);

@@ -5,7 +5,7 @@ import lombok.Data;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
-@DiscriminatorValue(value = "RIDI")
+@DiscriminatorValue(value = "R")
 @Entity(name = "tbl_ridi_book")
 @Data
 public class RidiBook extends Book {

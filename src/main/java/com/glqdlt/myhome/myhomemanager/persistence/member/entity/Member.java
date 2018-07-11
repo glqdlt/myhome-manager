@@ -27,7 +27,8 @@ public class Member {
     private String name;
 
     @JsonIgnore
-    @Column(nullable = false)
+    @Column(columnDefinition = "DATETIME DEFAULT CURRENT_TIMESTAMP",nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     @CreationTimestamp
     private Date regDate;
 

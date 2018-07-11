@@ -7,7 +7,7 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 
-@DiscriminatorValue("SCAN")
+@DiscriminatorValue("S")
 @Entity(name = "tbl_scan_book")
 @Data
 public class ScanBook extends Book {

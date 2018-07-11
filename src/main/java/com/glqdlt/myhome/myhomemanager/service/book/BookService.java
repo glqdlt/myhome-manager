@@ -10,11 +10,13 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.swing.text.html.Option;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @Service
@@ -33,21 +35,22 @@ public class BookService {
     }
 
     public Book findById(Integer seq) {
-        return bookRepo.findBookBySeq(seq);
+        Optional<Book> book = bookRepo.findBookBySeq(seq);
+        return book.isPresent() ? book.get() : null;
     }
 
     public void saveBook(ScanBookDto scanBookDto) {
 
         if (BookType.SCAN == scanBookDto.getBookType()) {
 
-            if(scanBookDto.getUploadFile() == null){
+            if (scanBookDto.getUploadFile() == null) {
                 log.info("file is empty");
                 return;
             }
 
             try {
-                Path uploadedPath =  uploadFile(scanBookDto.getUploadFile());
-                log.info("uploadedPath : {}",uploadedPath);
+                Path uploadedPath = uploadFile(scanBookDto.getUploadFile());
+                log.info("uploadedPath : {}", uploadedPath);
             } catch (IOException e) {
                 log.error(e.getMessage(), e);
             }

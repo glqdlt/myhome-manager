@@ -263,6 +263,7 @@
                             <th>등록일</th>
                             <th>마감일</th>
                             <th>등록자</th>
+                            <th>Tag</th>
                         </tr>
                         </thead>
                     </table>
@@ -367,6 +368,15 @@
                 {
                     data: 'register', render: function (data) {
                         return data.name;
+                    }
+                },
+                {
+                    data: 'tags', render: function (data) {
+                        if(data.length === 0){
+                            return '';
+                        }
+                        return data.map(x => x.value).reduce((acc, current) => acc + ',' + current);
+
                     }
                 }
             ],

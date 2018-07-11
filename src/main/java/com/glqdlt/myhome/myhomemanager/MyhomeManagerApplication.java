@@ -1,6 +1,5 @@
 package com.glqdlt.myhome.myhomemanager;
 
-import com.glqdlt.myhome.myhomemanager.persistence.book.entity.Author;
 import com.glqdlt.myhome.myhomemanager.persistence.book.entity.Book;
 import com.glqdlt.myhome.myhomemanager.persistence.book.repository.AuthorRepo;
 import com.glqdlt.myhome.myhomemanager.persistence.book.repository.BookRepo;
@@ -49,15 +48,15 @@ public class MyhomeManagerApplication implements CommandLineRunner {
         Member member = memberRepo.findById("Admin");
 
         Book book = new Book();
-        book.setAuthor(authorService.isNewAuthor("SomeAuthor"));
+        book.setAuthor(authorService.findAuthorIfNotFoundedWithSave("SomeAuthor"));
         book.setTitle("Some Book");
-        book.setTags(tagService.isNewTagSave("mind,java,"));
+        book.setTags(tagService.findTagsIfNotFoundedWithSave("mind,java,"));
         book.setRegister(member);
 
         Book book2 = new Book();
         book2.setTitle("New Design");
-        book2.setTags(tagService.isNewTagSave("design"));
-        book2.setAuthor(authorService.isNewAuthor("haha-man"));
+        book2.setTags(tagService.findTagsIfNotFoundedWithSave("design"));
+        book2.setAuthor(authorService.findAuthorIfNotFoundedWithSave("haha-man"));
         book2.setRegister(member);
 
         bookRepo.save(Arrays.asList(book,book2));

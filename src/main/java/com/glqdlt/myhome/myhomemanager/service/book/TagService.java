@@ -16,7 +16,7 @@ public class TagService {
     @Autowired
     TagRepo tagRepo;
 
-    public List<Tag> isNewTagSave(String values){
+    public List<Tag> findTagsIfNotFoundedWithSave(String values){
         List<Tag> tags = Arrays.asList(values.split(",")).stream().map(x -> {
             Optional<Tag> search = tagRepo.findByValue(x);
             if (!search.isPresent()) {

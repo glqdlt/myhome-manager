@@ -13,7 +13,7 @@ public class AuthorService {
     @Autowired
     AuthorRepo authorRepo;
 
-    public Author isNewAuthor(String authorName){
+    public Author findAuthorIfNotFoundedWithSave(String authorName){
         Optional<Author> searchAuthor = authorRepo.findByName(authorName);
         if(!searchAuthor.isPresent()){
             return authorRepo.save(new Author(authorName));

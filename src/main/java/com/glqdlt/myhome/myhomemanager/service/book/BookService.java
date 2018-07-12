@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.swing.text.html.Option;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -44,8 +43,8 @@ public class BookService {
         if (BookType.SCAN == scanBookDto.getBookType()) {
 
             if (scanBookDto.getUploadFile() == null) {
-                log.info("file is empty");
-                return;
+                log.error("file is empty");
+                throw  new BookException("파일이 없습니다.");
             }
 
             try {

@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ko" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="utf-8">
@@ -11,8 +11,6 @@
     <link rel="stylesheet" href="/assets/sbadmin/vendor/font-awesome/css/font-awesome.min.css" type="text/css"/>
     <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/assets/sbadmin/css/sb-admin.css"/>
-    <link rel="stylesheet" href="/assets/tagit/css/jquery.tagit.css"/>
-    <link rel="stylesheet" href="/assets/tagit/css/tagit.ui-zendesk.css"/>
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -252,111 +250,75 @@
             <div class="col-12">
                 <div class="row">
                     <div class="col-md-8 order-md-1">
-                        <h4 class="mb-3">Book Editor</h4>
-                        <form class="needs-validation" novalidate="">
-                            <div class="mb-3">
-                                <label for="book-title">Title</label>
-                                <input type="text" class="form-control" id="book-title">
-                                <div class="invalid-feedback">
-                                    Please enter a valid email address for shipping updates.
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="book-author">Author</label>
-                                <input type="text" class="form-control" id="book-author">
-                                <div class="invalid-feedback">
-                                    Please enter a valid email address for shipping updates.
-                                </div>
-                                <small class="text-muted">자동 완성 기능 활성화</small>
-                            </div>
+                        <h4 class="mb-3">Book Detail</h4>
+                        <div class="form-group row">
+                            <label for="example-text-input" class="col-2 col-form-label" >TITLE</label>
 
-                            <div class="mb-3">
-                                <label for="book-description-url">Description URL <span
-                                        class="text-muted">(Optional)</span></label>
-                                <input type="text" class="form-control" id="book-description-url"
-                                       placeholder="http://...">
-                                <div class="invalid-feedback">
-                                    Please enter a valid email address for shipping updates.
-                                </div>
+                            <div class="col-10">
+                                <input class="form-control" type="text" th:value="${book.title}" id="example-text-input">
                             </div>
-
-                            <div class="mb-3">
-                                <label for="book-thumbnail-url">Thumbnail URL <span class="text-muted">(Optional)</span></label>
-                                <input type="url" class="form-control" id="book-thumbnail-url"
-                                       placeholder="http://.../~.png">
-                                <div class="invalid-feedback">
-                                    Please enter a valid email address for shipping updates.
-                                </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="example-search-input" class="col-2 col-form-label">Author</label>
+                            <div class="col-10">
+                                <input class="form-control" type="search" th:value="${book.author.name}" id="example-search-input">
                             </div>
+                        </div>
 
-                            <div class="mb-3">
-                                <label for="expire-date">Expire Date <span class="text-muted">(Optional)</span></label>
-                                <input type="date" class="form-control" id="expire-date">
+                        <div class="form-group row">
+                            <label class="col-2 col-form-label">Description URl</label>
+                            <div class="col-10">
+                             <a target="_blank" th:href="${book.descriptionUrl}" th:text="${book.descriptionUrl}"></a>
                             </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-2 col-form-label">FILE_HASH</label>
+                            <div class="col-10">
+                                <input class="form-control" type="email" th:value="${book.fileHash}">
+                            </div>
+                        </div>
 
-                            <!--<h4 class="mb-3">Payment</h4>-->
+                        <div class="form-group row">
+                            <label class="col-2 col-form-label">FILE_NAME</label>
+                            <div class="col-10">
+                                <input class="form-control" type="email" th:value="${book.fileName}">
+                            </div>
+                        </div>
 
-                            <!--<div class="d-block my-3">-->
-                                <!--<div class="custom-control custom-radio">-->
-                                    <!--<input id="credit" name="paymentMethod" type="radio" class="custom-control-input"-->
-                                           <!--checked="" required="">-->
-                                    <!--<label class="custom-control-label" for="credit">Credit card</label>-->
-                                <!--</div>-->
-                                <!--<div class="custom-control custom-radio">-->
-                                    <!--<input id="debit" name="paymentMethod" type="radio" class="custom-control-input"-->
-                                           <!--required="">-->
-                                    <!--<label class="custom-control-label" for="debit">Debit card</label>-->
-                                <!--</div>-->
-                                <!--<div class="custom-control custom-radio">-->
-                                    <!--<input id="paypal" name="paymentMethod" type="radio" class="custom-control-input"-->
-                                           <!--required="">-->
-                                    <!--<label class="custom-control-label" for="paypal">PayPal</label>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        </form>
+                        <div class="form-group row">
+                            <label class="col-2 col-form-label">PATH</label>
+                            <div class="col-10">
+                                <input class="form-control" type="email" th:value="${book.path}">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-2 col-form-label">SIZE</label>
+                            <div class="col-10">
+                                <input class="form-control" type="email" th:value="${book.size}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="example-datetime-local-input" class="col-2 col-form-label">RegDate</label>
+                            <div class="col-10">
+                                <input class="form-control" type="datetime" th:value="${#dates.format(book.regDate,'yyyy-MM-dd HH:mm')}" id="example-datetime-local-input">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="example-datetime-local-input" class="col-2 col-form-label">ExpireDate</label>
+                            <div class="col-10">
+                                <input class="form-control" type="datetime" th:value="${book.expireDate} ? ${#dates.format(book.expireDate,'yyyy-MM-dd HH:mm')} : null" id="book-expire-date">
+                            </div>
+                        </div>
                     </div>
 
                     <div class="col-md-4 order-md-2 mb-4">
-                        <h4 class="d-flex justify-content-between align-items-center mb-3">
-                            Tags
-                        </h4>
-                        <form>
-                            <input name="tags" id="book-tags" value="">
-                        </form>
-                        <hr class="mb-4">
-
-                        <div class="mb-3">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="same-address">
-                                <label class="custom-control-label" for="same-address">메타 데이터만 등록합니다.</label>
-                            </div>
-                        </div>
+                        <img width="100%" th:src="${book.thumbnailUrl}"/>
 
 
                         <div class="mb-3">
-                            <ul class="nav nav-tabs">
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="#">스캔</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">리디북스</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link disabled" href="#">Disabled</a>
-                                </li>
-                            </ul>
+                            <button class="btn-primary">다운로드</button>
                         </div>
-
-
-                        <div class="mb-3">
-                            <input type="file" class="form-control" id="scan-file-upload">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-8 order-md-1">
-                        <hr class="mb-4">
-                        <button id="form-submit-button" class="btn btn-primary btn-lg btn-block" type="button" onclick="saveBook()">등록</button>
                     </div>
                 </div>
             </div>
@@ -396,53 +358,7 @@
     </div>
     <script src="/assets/datatable/jQuery-3.3.1/jquery-3.3.1.min.js"></script>
     <script src="/assets/bootstrap/js/bootstrap.bundle.js"></script>
-    <script src="/assets/sbadmin/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="/assets/sbadmin/js/sb-admin.min.js"></script>
-    <script src="/assets/tagit/js/jquery-ui.min.js"></script>
-    <script src="/assets/tagit/js/tag-it.min.js"></script>
     <script>
-        $(function () {
-            'use strict'
-            let tags = ['c++', 'java', 'php', 'coldfusion', 'javascript', 'asp', 'ruby', 'python', 'c', 'scala', 'groovy', 'haskell', 'perl', 'erlang', 'apl', 'cobol', 'go', 'lua'];
-            // examples, so it automatically defaults to singleField.
-            $('#book-tags').tagit({
-                availableTags: tags
-            });
-        });
-
-        function saveBook(){
-            'use strict'
-             let form = new FormData();
-            let uploadFile = $('#scan-file-upload')[0].files[0];
-            let title = $('#book-title').val();
-            let author = $('#book-author').val();
-            let descriptionUrl = $('book-description-url').val();
-            let expireDate = $('expire-date').val();
-            form.append("uploadFile",uploadFile);
-            form.append("title",title);
-            form.append("author",author);
-            form.append("descriptionUrl",descriptionUrl);
-            form.append("expireDate",expireDate);
-            form.append("bookType","SCAN");
-            form.append("tags",null);
-
-            $('#form-submit-button').toggleClass('disabled');
-
-            $.ajax({
-                url : '/api/books',
-                type : 'post',
-                contentType: false,
-                processData: false,
-                cache : false,
-                data : form,
-                success : function(res){
-                    $('#form-submit-button').toggleClass('disabled');
-                },
-                error : function(err){
-                    console.error(err);
-                }
-            })
-        }
     </script>
 </div>
 </body>

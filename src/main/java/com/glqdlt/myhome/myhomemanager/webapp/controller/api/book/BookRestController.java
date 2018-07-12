@@ -6,6 +6,7 @@ import com.glqdlt.myhome.myhomemanager.service.book.BookService;
 import com.glqdlt.myhome.myhomemanager.webapp.controller.api.DataTableModel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -36,7 +37,8 @@ public class BookRestController {
             @RequestParam(value = "title") String title,
             @RequestParam(value = "author") String author,
             @RequestParam(value = "bookType") BookType bookType,
-            @RequestParam(value = "expireDate", required = false) String expireDate,
+//            @RequestParam(value = "expireDate", required = false) String expireDate,
+            @DateTimeFormat(pattern = "yyyy-MM-dd") @RequestParam(value = "expireDate", required = false) String expireDate,
             @RequestParam(value = "descriptionUrl", required = false) String descriptionUrl,
             @RequestParam(value = "thumbnailUrl", required = false) String thumbnailUrl,
             @RequestParam(value = "uploadFile", required = false) MultipartFile file,

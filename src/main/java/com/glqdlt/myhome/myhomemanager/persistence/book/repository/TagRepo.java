@@ -7,4 +7,5 @@ import java.util.Optional;
 
 public interface TagRepo extends JpaRepository<Tag,Integer> {
     Optional<Tag> findByValue(String value);
+    Optional<Tag> countByValue(String value);
 }

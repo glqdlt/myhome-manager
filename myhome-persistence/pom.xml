@@ -22,6 +22,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+        <!--테스트 스킵-->
         <maven.test.skip>true</maven.test.skip>
     </properties>
 
@@ -54,6 +55,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <!-- 이부분이 중요 : boot 프로젝트는 boot-inf/class~ 이런식으로 구성되기 땜에 아래 처럼 해주어야 boot-inf 없이 패키징 된다./-->
                 <configuration>
                     <classifier>exec</classifier>
                 </configuration>

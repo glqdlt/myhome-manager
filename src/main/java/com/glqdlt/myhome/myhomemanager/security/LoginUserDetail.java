@@ -1,6 +1,6 @@
 package com.glqdlt.myhome.myhomemanager.security;
 //
-//import com.glqdlt.myhome.myhomemanager.persistence.member.entity.Member;
+//import Member;
 //import org.springframework.security.core.authority.AuthorityUtils;
 //import org.springframework.security.core.userdetails.User;
 //

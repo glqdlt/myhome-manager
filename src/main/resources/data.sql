@@ -12,5 +12,5 @@ INSERT INTO `tbl_book` (`archive_type`, `seq`, `description_url`, `expire_date`,
 INSERT INTO `tbl_book_tags` (`tbl_book_seq`, `tags_seq`) VALUES
 	(1, 1),
 	(1, 2);
-INSERT INTO `tbl_scan_book` (`file_hash`, `file_name`, `path`, `size`, `seq`, `server_seq`) VALUES
-	(NULL, NULL, NULL, NULL, 1, NULL);
+INSERT INTO `tbl_scan_book` (`file_hash`, `file_name`, `path`, `size`, `seq`, `server_seq`,`is_uploaded`) VALUES
+	(NULL, NULL, NULL, NULL, 1, NULL,NULL);

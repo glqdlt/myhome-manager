@@ -1,7 +1,7 @@
 package com.glqdlt.myhome.myhomemanager.service.book;
 
-import com.glqdlt.myhome.myhomemanager.persistence.book.entity.Tag;
-import com.glqdlt.myhome.myhomemanager.persistence.book.repository.TagRepo;
+import com.glqdlt.myhome.persistence.myhomepersistence.book.entity.Tag;
+import com.glqdlt.myhome.persistence.myhomepersistence.book.repository.TagRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

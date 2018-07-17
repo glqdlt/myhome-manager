@@ -1,7 +1,7 @@
 package com.glqdlt.myhome.myhomemanager.security;
 //
-//import com.glqdlt.myhome.myhomemanager.persistence.member.entity.Member;
-//import com.glqdlt.myhome.myhomemanager.persistence.member.repository.MemberRepo;
+//import Member;
+//import MemberRepo;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.security.core.userdetails.UserDetails;
 //import org.springframework.security.core.userdetails.UserDetailsService;

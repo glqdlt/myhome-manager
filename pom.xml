@@ -106,6 +106,18 @@
             <scope>test</scope>
             <version>1.4.194</version>
         </dependency>
+        <dependency>
+            <groupId>com.glqdlt.myhome.persistence</groupId>
+            <artifactId>myhome-persistence</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.glqdlt.myhome.persistence</groupId>
+            <artifactId>myhome-persistence</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -127,4 +139,10 @@
             <url>http://192.168.148.139:18081/repository/maven-releases/</url>
         </repository>
     </distributionManagement>
+    <repositories>
+        <repository>
+            <id>public</id>
+            <url>http://192.168.148.139:18081/repository/maven-public/</url>
+        </repository>
+    </repositories>
 </project>

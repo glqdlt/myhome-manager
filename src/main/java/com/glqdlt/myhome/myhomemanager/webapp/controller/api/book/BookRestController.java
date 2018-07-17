@@ -1,7 +1,7 @@
 package com.glqdlt.myhome.myhomemanager.webapp.controller.api.book;
 
 
-import com.glqdlt.myhome.myhomemanager.persistence.book.entity.Book;
+import com.glqdlt.myhome.persistence.myhomepersistence.book.entity.Book;
 import com.glqdlt.myhome.myhomemanager.service.book.BookService;
 import com.glqdlt.myhome.myhomemanager.webapp.controller.api.DataTableModel;
 import lombok.extern.slf4j.Slf4j;

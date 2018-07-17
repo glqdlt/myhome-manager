@@ -1,6 +1,6 @@
 package com.glqdlt.myhome.myhomemanager.webapp.controller;
 
-import com.glqdlt.myhome.myhomemanager.persistence.book.entity.Book;
+import com.glqdlt.myhome.persistence.myhomepersistence.book.entity.Book;
 import com.glqdlt.myhome.myhomemanager.service.book.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

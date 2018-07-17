@@ -1,7 +1,7 @@
 package com.glqdlt.myhome.myhomemanager.service.book;
 
-import com.glqdlt.myhome.myhomemanager.persistence.book.entity.Author;
-import com.glqdlt.myhome.myhomemanager.persistence.book.repository.AuthorRepo;
+import com.glqdlt.myhome.persistence.myhomepersistence.book.entity.Author;
+import com.glqdlt.myhome.persistence.myhomepersistence.book.repository.AuthorRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -25,7 +25,7 @@ import static java.util.stream.Collectors.toList;
 @RunWith(SpringRunner.class)
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-public class EventCouponIssueLogRepoTest {
+public class CouponIssueRepoTest {
 
     @Autowired
     private TestEntityManager testEntityManager;

@@ -31,7 +31,7 @@ public class CouponIssueRepoTest {
     private TestEntityManager testEntityManager;
 
     @Autowired
-    private CouponIssueLogRepo couponIssueLogRepo;
+    private CouponIssueRepo couponIssueRepo;
 
     @Autowired
     private CouponRepo couponRepo;

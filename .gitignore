@@ -15,13 +15,13 @@
 *.iws
 *.iml
 *.ipr
-.mvn
 
-**/application-product.properties
-**/application-qa.properties
-
-mvnw
-mvnw.cmd
+**/target
+**/.mvn
+**/*.iml
+**/mvnw
+**/mvnw.cmd
+**/.idea
 
 ### NetBeans ###
 /nbproject/private/

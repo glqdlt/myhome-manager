@@ -18,7 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Arrays;
 
 @Slf4j
-@ComponentScan(basePackages ={"com.glqdlt.myhome.webapp", "com.glqdlt.myhome.persistence"})
+@ComponentScan(basePackages ={"com.glqdlt.myhome.webapp", "com.glqdlt.myhome.persistence","com.glqdlt.serverpowermanager"})
 @SpringBootApplication
 public class MyhomeWebApplication implements CommandLineRunner {
 

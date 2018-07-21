@@ -27,10 +27,10 @@ public class ShutdownExecutorTest {
     private String ROOT_PW;
 
     @Autowired
-    ShutdownExecutor shutdownExecutor;
+    RemoteExecutor remoteExecutor;
 
     @Test
     public void exec() {
-        shutdownExecutor.exec(USER_ID, USER_PW, HOST, Integer.parseInt(PORT), ROOT_PW, ShutdownCommander.SHUTDOWN ,0);
+        remoteExecutor.systemShutdownExecute(USER_ID, USER_PW, HOST, Integer.parseInt(PORT), ROOT_PW, ShutdownCommander.SHUTDOWN ,0);
     }
 }

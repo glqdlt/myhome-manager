@@ -13,7 +13,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 @Slf4j
 @RunWith(SpringRunner.class)
-public class ShutdownExecutorTest {
+public class RemoteExecutorTest {
 
     @Value("${ssh.user.id}")
     private String USER_ID;

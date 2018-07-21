@@ -9,9 +9,10 @@ import java.net.InetAddress;
 
 @Component
 @Slf4j
-public class PowerOnExecutor {
+public class WakeOnLanExecutor {
 
     public void execute(String port, String host, String macAddress) {
+        DatagramSocket socket = null;
         try {
             byte[] macBytes = getMacBytes(macAddress);
             byte[] bytes = new byte[6 + 16 * macBytes.length];
@@ -24,14 +25,17 @@ public class PowerOnExecutor {
 
             InetAddress address = InetAddress.getByName(host);
             DatagramPacket packet = new DatagramPacket(bytes, bytes.length, address, Integer.parseInt(port));
-            DatagramSocket socket = new DatagramSocket();
+            socket = new DatagramSocket();
             socket.send(packet);
-            socket.close();
 
             log.info("Send packet.");
         } catch (Exception e) {
             log.error("Some Exception", e);
-            System.exit(1);
+//            System.exit(1);
+        } finally {
+            if (socket != null) {
+                socket.close();
+            }
         }
     }
 

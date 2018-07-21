@@ -23,7 +23,7 @@ public class WakeOnExecutorTest {
 
     @Test
     public void name() {
-        PowerOnExecutor powerOnExecutor = new PowerOnExecutor();
-        powerOnExecutor.execute(PORT, HOST, MAC);
+        WakeOnLanExecutor wakeOnLanExecutor = new WakeOnLanExecutor();
+        wakeOnLanExecutor.execute(PORT, HOST, MAC);
     }
 }

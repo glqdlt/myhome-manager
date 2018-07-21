@@ -14,9 +14,9 @@ import java.io.OutputStream;
 
 @Slf4j
 @Component
-public class ShutdownExecutor {
+public class RemoteExecutor {
 
-    public void exec(String userId, String userPw, String host, Integer port, String rootPw, ShutdownCommander command, Integer timer) {
+    public void systemShutdownExecute(String userId, String userPw, String host, Integer port, String rootPw, ShutdownCommander command, Integer timer) {
         try {
             java.util.Properties config = new java.util.Properties();
             config.put("StrictHostKeyChecking", "no");

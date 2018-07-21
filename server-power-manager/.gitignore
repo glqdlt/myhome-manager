@@ -16,15 +16,6 @@
 *.iml
 *.ipr
 
-**/target
-**/.mvn
-**/*.iml
-**/mvnw
-**/mvnw.cmd
-**/.idea
-
-**/*-prod.properties
-
 ### NetBeans ###
 /nbproject/private/
 /build/

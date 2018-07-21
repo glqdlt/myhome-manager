@@ -23,6 +23,8 @@
 **/mvnw.cmd
 **/.idea
 
+**/*-prod.properties
+
 ### NetBeans ###
 /nbproject/private/
 /build/

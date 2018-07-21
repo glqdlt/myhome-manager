@@ -16,21 +16,21 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class ShutdownExecutorTest {
 
     @Value("${ssh.user.id}")
-    private String userId;
+    private String USER_ID;
     @Value("${ssh.user.pw}")
-    private String userPw;
-    @Value("${ssh.host.ip}")
-    private String host;
-    @Value("${ssh.host.port}")
-    private String port;
+    private String USER_PW;
+    @Value("${ssh.HOST.ip}")
+    private String HOST;
+    @Value("${ssh.HOST.PORT}")
+    private String PORT;
     @Value("${ssh.root.pw}")
-    private String rootPw;
+    private String ROOT_PW;
 
     @Autowired
     ShutdownExecutor shutdownExecutor;
 
     @Test
     public void exec() {
-        shutdownExecutor.exec(userId, userPw, host, Integer.parseInt(port), rootPw, ShutdownCommander.SHUTDOWN ,0);
+        shutdownExecutor.exec(USER_ID, USER_PW, HOST, Integer.parseInt(PORT), ROOT_PW, ShutdownCommander.SHUTDOWN ,0);
     }
 }

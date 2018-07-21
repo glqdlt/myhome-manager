@@ -19,9 +19,9 @@ public class ShutdownExecutorTest {
     private String USER_ID;
     @Value("${ssh.user.pw}")
     private String USER_PW;
-    @Value("${ssh.HOST.ip}")
+    @Value("${ssh.host.ip}")
     private String HOST;
-    @Value("${ssh.HOST.PORT}")
+    @Value("${ssh.host.port}")
     private String PORT;
     @Value("${ssh.root.pw}")
     private String ROOT_PW;

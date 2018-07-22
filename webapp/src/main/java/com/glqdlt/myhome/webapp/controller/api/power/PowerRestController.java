@@ -2,6 +2,7 @@ package com.glqdlt.myhome.webapp.controller.api.power;
 
 import com.glqdlt.myhome.webapp.service.power.PowerService;
 import com.glqdlt.serverpowermanager.ShutdownCommander;
+import com.glqdlt.serverpowermanager.ShutdownCommanderFactory;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,18 +19,12 @@ public class PowerRestController {
 
     @GetMapping("/remote/{command}")
     public ResponseEntity shutdownSystem(@PathVariable String server, @PathVariable String command) {
-
-        ShutdownCommander shutdownCommander = null;
-        if (command.toUpperCase().equals(ShutdownCommander.SHUTDOWN.name())) {
-            shutdownCommander = ShutdownCommander.SHUTDOWN;
+        ShutdownCommander shutdownCommander = ShutdownCommanderFactory.generate(command);
+        if (shutdownCommander == null) {
+            return new ResponseEntity(HttpStatus.BAD_REQUEST);
+        } else {
             powerService.remoteExecute(server, shutdownCommander, 0);
-        } else if (command.toUpperCase().equals(ShutdownCommander.RESTART.name())) {
-            shutdownCommander = ShutdownCommander.RESTART;
-            powerService.remoteExecute(server, shutdownCommander, 0);
-        } else if (command.toUpperCase().equals("WAKE")) {
-            powerService.wakeOnSystem(server);
+            return new ResponseEntity(HttpStatus.OK);
         }
-
-        return new ResponseEntity(HttpStatus.OK);
     }
 }

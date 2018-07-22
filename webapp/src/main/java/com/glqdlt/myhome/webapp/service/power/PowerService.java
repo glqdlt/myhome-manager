@@ -37,11 +37,11 @@ public class PowerService {
     @Autowired
     WakeOnLanExecutor wakeOnLanExecutor;
 
-    public void wakeOnSystem(String server) {
-        wakeOnLanExecutor.execute(WAKE_PORT, WAKE_HOST, WAKE_MAC);
-    }
-
     public void remoteExecute(String server, ShutdownCommander shutdownCommander, Integer timer) {
-        remoteExecutor.systemShutdownExecute(USER_ID, USER_PW, HOST, Integer.parseInt(PORT), ROOT_PW, shutdownCommander, timer);
+        if (shutdownCommander == ShutdownCommander.WAKE) {
+            wakeOnLanExecutor.execute(WAKE_PORT, WAKE_HOST, WAKE_MAC);
+        } else {
+            remoteExecutor.systemShutdownExecute(USER_ID, USER_PW, HOST, Integer.parseInt(PORT), ROOT_PW, shutdownCommander, timer);
+        }
     }
 }

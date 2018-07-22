@@ -25,6 +25,7 @@
         <module>persistence</module>
         <module>webapp</module>
         <module>server-power-manager</module>
+        <module>uml</module>
     </modules>
 
     <dependencies>
@@ -93,5 +94,12 @@
             <url>http://192.168.148.139:18081/repository/maven-releases/</url>
         </repository>
     </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>public</id>
+            <url>http://192.168.148.139:18081/repository/maven-public</url>
+        </repository>
+    </repositories>
 
 </project>

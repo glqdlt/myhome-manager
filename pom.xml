@@ -27,6 +27,7 @@
         <module>server-power-manager</module>
         <module>uml</module>
     </modules>
+    
 
     <dependencies>
         <dependency>

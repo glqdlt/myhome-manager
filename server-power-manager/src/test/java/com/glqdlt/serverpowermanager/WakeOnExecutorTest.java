@@ -24,6 +24,6 @@ public class WakeOnExecutorTest {
     @Test
     public void name() {
         WakeOnLanExecutor wakeOnLanExecutor = new WakeOnLanExecutor();
-        wakeOnLanExecutor.execute(PORT, HOST, MAC);
+        wakeOnLanExecutor.execute( HOST, MAC);
     }
 }

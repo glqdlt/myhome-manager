@@ -11,7 +11,12 @@ import java.net.InetAddress;
 @Slf4j
 public class WakeOnLanExecutor {
 
-    public void execute(String port, String host, String macAddress) {
+    /**
+     *
+     * @param host  브로드캐스팅에 사용 될 ip 대역  ex) 192.168.0.255
+     * @param macAddress
+     */
+    public void execute(String host, String macAddress) {
         DatagramSocket socket = null;
         try {
             byte[] macBytes = getMacBytes(macAddress);
@@ -24,7 +29,7 @@ public class WakeOnLanExecutor {
             }
 
             InetAddress address = InetAddress.getByName(host);
-            DatagramPacket packet = new DatagramPacket(bytes, bytes.length, address, Integer.parseInt(port));
+            DatagramPacket packet = new DatagramPacket(bytes, bytes.length, address, 9);
             socket = new DatagramSocket();
             socket.send(packet);
 
